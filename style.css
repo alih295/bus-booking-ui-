@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+#main {
+  width: 100%;
+  height: 100vh;
+  background-image: url(https://immanuel.sa.edu.au/wp-content/uploads/2023/08/DSC_3351-1536x1025.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+#overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.537);
+  position: fixed;
+}
+#nav {
+  position: absolute;
+  z-index: 9;
+  width: 100%;
+  height: 80px;
+  /* background-color: rgb(255, 148, 8); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  opacity: 0;
+  animation-name: loader;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  transition: all ease 0.2s;
+}
+#nav:hover{
+  background-color: rgba(0, 0, 0, 0.43);
+}
+#nav a {
+  position: relative;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: gilroy;
+  font-size: 1.8vw;
+  text-transform: capitalize;
+  margin-left: 30px;
+  font-weight: 500;
+}
+#nav a::after{
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  transform: scalex(0);
+  transition: all ease 0.2s;
+}
+#nav>a:hover::after{
+  transform: scalex(1);
+}
+#content {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 80px);
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation-name: loader;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+#content h1 {
+  font-size: 4vw;
+  font-family: gilroy;
+  text-transform: capitalize;
+  color: #fff;
+  margin-bottom: 30px;
+}
+#content h1 span {
+  color: transparent;
+  -webkit-text-stroke-color: #fff;
+  -webkit-text-stroke-width: 1px;
+  transition: all ease 0.3s;
+}
+#content h1 span:hover{
+  color: chartreuse;
+  -webkit-text-stroke-color: #fff;
+  -webkit-text-stroke-width:0px;
+ 
+}
+
+#content h3 {
+  font-size: 3vw;
+  font-family: gilroy;
+  text-transform: capitalize;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+#content button {
+  padding: 5px 20px;
+  font-family: gilroy;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  border: 2px solid black;
+  background-color: transparent;
+  color: #fff;
+  transition: all ease 0.3s;
+}
+#content button:hover {
+  background-color: #fff;
+  transform: scale(1);
+  color: black;
+  font-weight: 600;
+}
+
+@keyframes loader {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  #main {
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://t4.ftcdn.net/jpg/02/69/47/51/360_F_269475198_k41qahrZ1j4RK1sarncMiFHpcmE2qllQ.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  #overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.534);
+    position: fixed;
+  }
+  #nav {
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 60px;
+    /* background-color: rgb(255, 148, 8); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    opacity: 0;
+    animation-name: loader;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+  #nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-family: gilroy;
+    font-size: 3vw;
+    text-transform: capitalize;
+    margin-left: 30px;
+    font-weight: 500;
+  }
+  #content h1 {
+    font-size: 6vw;
+    font-family: gilroy;
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 30px;
+  }
+  #content h1 span {
+    color: chartreuse;
+  }
+  #content h3 {
+    font-size: 6vw;
+    font-family: gilroy;
+    text-transform: capitalize;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  #content button {
+    padding: 8px 25px;
+    font-family: gilroy;
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    border: 2px solid black;
+    background-color: transparent;
+    color: #fff;
+    transition: all ease 0.2s;
+  }
+}
